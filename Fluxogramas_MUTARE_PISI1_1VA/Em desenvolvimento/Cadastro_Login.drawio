@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" version="27.0.5">
+  <diagram name="Página-1" id="IZqAts2g6bXaED-vM-Xr">
+    <mxGraphModel dx="1188" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0boTivlSuVRbXw25WTQz-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0boTivlSuVRbXw25WTQz-2" target="0boTivlSuVRbXw25WTQz-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-2" value="Início" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="369" y="40" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-3" value="&quot;E-mail:&lt;div&gt;Senha:&lt;span style=&quot;background-color: transparent;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="367" y="130" width="94" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=62;entryDy=0;entryPerimeter=0;exitX=0.541;exitY=0.907;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="0boTivlSuVRbXw25WTQz-3" target="0boTivlSuVRbXw25WTQz-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="200" as="sourcePoint" />
+            <mxPoint x="520" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-9" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="355" y="200" width="104" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-5" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=card;whiteSpace=wrap;size=20;arcSize=12;" vertex="1" parent="0boTivlSuVRbXw25WTQz-9">
+          <mxGeometry width="104" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-6" value="Email, Senha" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="0boTivlSuVRbXw25WTQz-9">
+          <mxGeometry x="22" y="15" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-11" value="Email tem domínio ufrpe?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0boTivlSuVRbXw25WTQz-12" value="Email tem &quot;.com&quot; no final?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="400" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

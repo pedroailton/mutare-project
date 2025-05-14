@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.4">
+  <diagram name="Página-1" id="tM3ftosBq5wTvWjN4mbQ">
+    <mxGraphModel dx="1074" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-41" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="20" width="310" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="7ZSRkaOjpOQk4Y71W81P-1" target="xj_4vrmqcOP7FG4T2v6e-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7ZSRkaOjpOQk4Y71W81P-1" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Mascote&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-3" target="xj_4vrmqcOP7FG4T2v6e-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-3" value="Desempenho Ótimo igual a 1?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="625" y="210" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-5" target="xj_4vrmqcOP7FG4T2v6e-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-5" value="Algoritmo de Desempenho atribui valor 1 em apenas uma das 4 variáveis que sinalizam o desempenho do usuário de acordo com o progresso nos hábitos. As variáveis são:&lt;div&gt;1. Desempenho Ótimo&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2. Desempenho Bom&lt;/span&gt;&lt;/div&gt;&lt;div&gt;3. Desempenho Fraco&lt;/div&gt;&lt;div&gt;4. Desempenho Ruim&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="30" width="230" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-8" target="xj_4vrmqcOP7FG4T2v6e-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-8" value="Desempenho Bom igual a 1?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-9" target="xj_4vrmqcOP7FG4T2v6e-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-9" value="ASCII do Mascote muito feliz" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-11" value="&quot;Você é incrível!!!&quot;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-14" target="xj_4vrmqcOP7FG4T2v6e-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-14" value="ASCII do Mascote muito feliz" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-15" value="&quot;É isso aí, tá arrasando!!&quot;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-16" target="xj_4vrmqcOP7FG4T2v6e-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-16" target="xj_4vrmqcOP7FG4T2v6e-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-16" value="Desempenho Fraco igual a 1?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="395" y="530" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-18" target="xj_4vrmqcOP7FG4T2v6e-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-18" value="ASCII do Mascote preocupado" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="505" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-19" value="&quot;Bora melhorar!&quot;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="505" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-22" target="xj_4vrmqcOP7FG4T2v6e-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-22" value="ASCII do Mascote muito preocupado" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-23" value="&quot;Lembre de tudo que fez até aqui e o porquê de tudo, não é hora de desisitir&quot;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="620" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-3" target="xj_4vrmqcOP7FG4T2v6e-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="410" as="sourcePoint" />
+            <mxPoint x="510" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="xj_4vrmqcOP7FG4T2v6e-8" target="xj_4vrmqcOP7FG4T2v6e-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="410" as="sourcePoint" />
+            <mxPoint x="510" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-32" value="V" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="705" y="228" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-33" value="F" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="575" y="218" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-34" value="F" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="465" y="378" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-35" value="V" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="585" y="378" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-36" value="F" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="365" y="548" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-38" value="V" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="465" y="548" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-39" value="Coloquei as variáveis podendo só ser de valor 1 ou 0, diferente do que tava antes, para perguntar ao professor se é melhor assim, para ocupar menos espaço, ou a gente deixa do jeito que está nos menus que já foram feitos" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="840" y="70" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xj_4vrmqcOP7FG4T2v6e-40" value="" style="curved=1;endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="150" as="sourcePoint" />
+            <mxPoint x="830" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="830" y="150" />
+              <mxPoint x="780" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
