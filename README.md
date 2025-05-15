@@ -42,8 +42,7 @@ Esse é o Mutare.
   ---------------------
 # TECNOLOGIAS UTILIZADAS
   ---------------------
-  Python 3
-  SQLite
+  Python 3 e SQLite
   
   ---------------------
 # INSTALAÇÃO
