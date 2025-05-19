@@ -1,12 +1,13 @@
 ![Sem nome (500 x 500 px) (2)](https://github.com/user-attachments/assets/db754006-615e-483d-b495-2ba13c265d26)
-# MUTARE-Project
+# MUTARE Project 🐌
 
-**Repositório para MUTARE - PISI1 - Projetos Interdiciplinares de Sistemas da Informação 1**
-Desenvolvedores: Laura Cordeiro e Pedro Ailton
-Docente Responsável pela Disciplina: Cleyton Magalhães
+**Repositório MUTARE - PISI1 - Projetos Interdiciplinares de Sistemas da Informação 1**  
+Desenvolvedores: Laura Cordeiro e Pedro Ailton  
+Docente Responsável: Cleyton Magalhães  
 
-Descrição do projeto:
-O Mutare é uma ferramenta segura de gerenciamento consciente de hábitos que busca trazer qualidade de vida, saúde e produtividade na atual era de estímulos incessantes advindos das comodidades das novas tecnologias, que desincentiva a prática de bons hábitos. A partir da poderosa psicologia do hábito (acertivamente tratada por Charles Duhigg em seu livro "O Poder do Hábito", inspiração para o nosso projeto), criamos um sistema digital capaz de fornecer assistência ao desenvolvimento de hábitos novos (que o sistema também poderá sugerir - como hábitos sustentáveis e cidadãos), correção de maus hábitos e acompanhamento dos hábitos desenvolvidos pelos usuários, junto de um sistema de recompensas, medição de desempenho e mascote.
+Descrição do projeto:  
+O Mutare é uma ferramenta segura de gerenciamento consciente de hábitos que busca trazer qualidade de vida, saúde e produtividade na atual era de estímulos incessantes advindos das comodidades das novas tecnologias, que desincentiva a prática de bons hábitos.  
+A partir da poderosa psicologia do hábito (acertivamente tratada por Charles Duhigg em seu livro "O Poder do Hábito", inspiração para o nosso projeto), criamos um sistema digital capaz de fornecer assistência ao desenvolvimento de hábitos novos (que o sistema também poderá sugerir - como hábitos sustentáveis e cidadãos), correção de maus hábitos e acompanhamento dos hábitos desenvolvidos pelos usuários, junto de um sistema de recompensas, medição de desempenho e mascote.  
 Esse é o Mutare.
 
 ## ENTREGAS
@@ -33,8 +34,9 @@ VALIDAÇÃO DE SENHA
  7. RF008 - Sistema de Recompensas(XP) e Níveis
 
 ## TECNOLOGIAS UTILIZADAS
+  ```
   Python 3 e SQLite
-  
+  ```
 ## INSTALAÇÃO
 
 ## PRINCIPAIS FUNÇÕES DO CÓDIGO
