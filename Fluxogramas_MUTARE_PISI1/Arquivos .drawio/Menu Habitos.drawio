@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.6">
   <diagram name="Página-1" id="tM3ftosBq5wTvWjN4mbQ">
-    <mxGraphModel dx="1603" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -87,7 +87,7 @@
         <mxCell id="7ZSRkaOjpOQk4Y71W81P-5" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Dígito de Escolha&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="-256payaFn2Az7FJpQGM-1" vertex="1">
           <mxGeometry x="10" y="10" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="jLTH9HTdux2gprQKa7NV-1" value="Mais para frente será adicionado o Progredir no Hábito, a fim do usuário conseguir incrementar seu progresso de acordo com a frequência inserida" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="jLTH9HTdux2gprQKa7NV-1" value="Mais para frente será adicionado o Progredir no Hábito, a fim do usuário conseguir incrementar seu progresso de acordo com a frequência inserida" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="20" y="20" width="150" height="160" as="geometry" />
         </mxCell>
       </root>
