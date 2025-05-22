@@ -15,6 +15,9 @@ Esse é o Mutare.
 - [ ] 2VA 16/07/25
 - [ ] 3VA 23/07/25
 
+## FLUXOGRAMAS DOS REQUISITOS FUNCIONAIS
+Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) ou na [pasta do repositório]()
+
 ## REQUISITOS FUNCIONAIS
 ###  1ª VA
 1. RF001 -  Cadastro de Conta do Usuário ("C" do CRUD)
