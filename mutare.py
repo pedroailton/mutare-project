@@ -67,8 +67,8 @@ def validar_senha(senha):
         return f"A senha não pode ter mais que {comprimento_maximo} caracteres."
     elif not any(char.isdigit() for char in senha):
         return "A senha deve conter pelo menos um número."
-
-    return "válida"
+    else:
+        return "válida"
 
 #Função senha de asteriscos 
 if os.name == 'nt':
@@ -155,7 +155,7 @@ def menu_log_cad():
         tela_cadastro()
     else:
         print(Fore.RED + 'Insira uma opção válida.')
-        time.sleep(2)
+        time.sleep(2) #Retém a mensagem por 2 segundos, a fim de que o leitor consiga lê-la.
         limpar_tela()
         menu_log_cad()
 
