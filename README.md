@@ -16,7 +16,7 @@ Esse é o Mutare.
 - [ ] 3VA 23/07/25
 
 ## FLUXOGRAMAS DOS REQUISITOS FUNCIONAIS
-Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) ou baixe na [pasta](Fluxogramas_MUTARE_PISI1)
+Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) (Google Drive) ou baixe na [pasta](Fluxogramas_MUTARE_PISI1) (Github)
  do repositório
 ## REQUISITOS FUNCIONAIS
 ###  1ª VA
