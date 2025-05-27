@@ -175,29 +175,43 @@ def tela_cadastro():
         print(' '*16 + 'CADASTRO')
         print('='*40)
 
-        #Validação do e-mail
+        print(Fore.CYAN + "Digite 'voltar' a qualquer momento para retornar ao menu.\n")
+
+        # Validação do e-mail
         Email = input(Fore.YELLOW + 'Seu E-mail: ').strip()
+        if Email.lower() == 'voltar':
+            menu_log_cad()
+            return
+
         if ' ' in Email or not email_valido(Email.lower()):
             print(Fore.RED + 'E-mail inválido. Use apenas domínios @gmail.com ou @ufrpe.br e não utilize espaços.')
             time.sleep(4)
             continue
 
-        #Validação da senha
+        # Validação da senha
         while True:
-            nova_senha = input_senha_asteriscos(Fore.YELLOW + 'Nova senha: ') 
+            nova_senha = input_senha_asteriscos(Fore.YELLOW + 'Nova senha: ').strip()
+            if nova_senha.lower() == 'voltar':
+                menu_log_cad()
+                return
+
             resultado = validar_senha(nova_senha)
             if resultado != "válida":
                 print(Fore.RED + resultado)
                 time.sleep(2)
                 continue
 
-            confirmar_senha = input_senha_asteriscos(Fore.YELLOW + 'Confirme a senha: ')
+            confirmar_senha = input_senha_asteriscos(Fore.YELLOW + 'Confirme a senha: ').strip()
+            if confirmar_senha.lower() == 'voltar':
+                menu_log_cad()
+                return
+
             if nova_senha != confirmar_senha:
                 print(Fore.RED + 'As senhas não coincidem. Tente novamente.')
                 time.sleep(2)
                 continue
 
-            break 
+            break
 
         try:
             hash_senha = bcrypt.hashpw(nova_senha.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
@@ -224,8 +238,17 @@ def tela_login():
         print(' '*17 + 'LOGIN')
         print('='*40)
 
-        Email = input(Fore.YELLOW + 'Seu E-mail: ')
-        senha = input_senha_asteriscos(Fore.YELLOW + 'Senha: ') 
+        print(Fore.CYAN + "Digite 'voltar' a qualquer momento para retornar ao menu.\n")
+
+        Email = input(Fore.YELLOW + 'Seu E-mail: ').strip()
+        if Email.lower() == 'voltar':
+            menu_log_cad()
+            return
+
+        senha = input_senha_asteriscos(Fore.YELLOW + 'Senha: ').strip()
+        if senha.lower() == 'voltar':
+            menu_log_cad()
+            return
 
         cursor.execute('SELECT senha FROM usuarios WHERE Email = ?', (Email,))
         resultado = cursor.fetchone()
@@ -687,6 +710,7 @@ def progresso():
 
             if existe:
                 print("Progresso já registrado para essa frequência. Não é possível marcar novamente.")
+                time.sleep(1)
             else:
                 cursor.execute('''
                     INSERT INTO habit_progress (habit_id, date, status)
@@ -697,6 +721,69 @@ def progresso():
 
     print("\n=== Fim da visualização ===\n")
     time.sleep(1)
+
+def mascote():
+    limpar_tela()
+    print("\n=== Seu mascote ===\n")
+
+    #Algoritmo para determinar o desempenho 
+    cursor.execute("SELECT status FROM habit_progress")
+    status_list = cursor.fetchall()
+
+    feitos = sum(1 for status in status_list if status[0] == 'Feito')
+    total = len(status_list)
+
+    if total == 0:
+        desempenho_percentual = None  # nenhum progresso ainda
+    else:
+        desempenho_percentual = (feitos / total) * 100
+
+    #Inicializa as variáveis
+    desempenho_otimo = 0
+    desempenho_bom = 0
+    desempenho_fraco = 0
+    desempenho_ruim = 0
+
+    #Definindo o desempenho conforme o percentual
+    if desempenho_percentual is None:
+        pass  #não define nenhuma variável
+    elif desempenho_percentual >= 80:
+        desempenho_otimo = 1
+    elif desempenho_percentual >= 60:
+        desempenho_bom = 1
+    elif desempenho_percentual >= 40:
+        desempenho_fraco = 1
+    else:
+        desempenho_ruim = 1
+
+    #Reações 
+    if desempenho_otimo == 1:
+        print(r"""
+        \(^_^)/ 
+        """)
+        print("Você é incrível!!!")
+    elif desempenho_bom == 1:
+        print(r"""
+        (^_^)
+        """)
+        print("É isso aí, tá arrasando!!")
+    elif desempenho_fraco == 1:
+        print(r"""
+        (._.)
+        """)
+        print("Bora melhorar!")
+    elif desempenho_ruim == 1:
+        print(r"""
+        (T_T)
+        """)
+        print("Lembre de tudo que fez até aqui e o porquê de tudo, não é hora de desistir")
+    else:
+        print(r"""
+        (o_o)
+        """)
+        print("Estou esperando você começar a marcar o progresso.")
+
+    input("\nPressione Enter para voltar ao menu.")
    
 #Execução    
 if __name__ == '__main__':
