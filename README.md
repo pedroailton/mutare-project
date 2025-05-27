@@ -36,10 +36,11 @@ VALIDAÇÃO DE SENHA
  6. RF006 - CRUD Hábitos
  7. RF008 - Sistema de Recompensas(XP) e Níveis
 
-## TECNOLOGIAS UTILIZADAS
-  ```
-  Python 3 e SQLite
-  ```
-## INSTALAÇÃO
+## TECNOLOGIAS UTILIZADAS  
+Python 3 e SQLite
 
+## INSTALAÇÃO
+ ```
+ pip install colorama bcrypt
+ ```
 ## PRINCIPAIS FUNÇÕES DO CÓDIGO
