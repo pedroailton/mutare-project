@@ -185,7 +185,7 @@ def tela_cadastro():
 
         if ' ' in Email or not email_valido(Email.lower()):
             print(Fore.RED + 'E-mail inválido. Use apenas domínios @gmail.com ou @ufrpe.br e não utilize espaços.')
-            time.sleep(4)
+            time.sleep(2)
             continue
 
         # Validação da senha
