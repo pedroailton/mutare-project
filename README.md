@@ -11,7 +11,7 @@ A partir da poderosa psicologia do hábito (acertivamente tratada por Charles Du
 Esse é o Mutare.
 
 ## ENTREGAS
-- [ ] 1VA 28/05/25
+- [x] 1VA 28/05/25
 - [ ] 2VA 16/07/25
 - [ ] 3VA 23/07/25
 
