@@ -19,21 +19,18 @@ Esse é o Mutare.
 Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) (Google Drive)
 ## REQUISITOS FUNCIONAIS
 ###  1ª VA
-1. RF001 -  Cadastro de Conta do Usuário ("C" do CRUD)
-VALIDAÇÃO DE EMAIL
-   1. verificar se há: .com, @, não há espaços em branco, domínio válido (ufrpe, gmail);
-   2. verificar se o e-mail inserido no cadastro é diferente de qualquer outro já cadastrado no banco de dados."
-VALIDAÇÃO DE SENHA
-   1. verificar se há: de 4 à 8 carácteres e pelo menos um número;
-   2. verificar se há uma letra maiúscula ao menos.
-2. RF002 - Menu Principal
-3. RF003 - Configurações: ""R"", ""U"" e ""D"" do CRUD de Conta do Usuário e Sistema de Perfil e Acompanhamento Diário  
-4. RF004 - Menu Hábitos
-5. RF005 - Mascote
+RF001 - Menu Cadastro
+RF002 -  Cadastro de Conta do Usuário ("C" do CRUD)
+RF003 - Login
+RF004 - Senha Não Visível ao Digitar
+RF006 - Menu Principal
+RF007 - Configurações: "R", "U" e "D" do CRUD de Conta do Usuário
+RF008 - Menu Hábitos
+RF009 - Algoritmo de Desempenho do Usuário para Mascote
+RF009- Mascote
+RF010 - CRUD Hábitos
   
  ### 2ª VA (Requisitos ainda não definidos completamente)
- 6. RF006 - CRUD Hábitos
- 7. RF008 - Sistema de Recompensas(XP) e Níveis
 
 
 
