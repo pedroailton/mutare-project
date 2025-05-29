@@ -19,16 +19,16 @@ Esse é o Mutare.
 Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) (Google Drive)
 ## REQUISITOS FUNCIONAIS
 ###  1ª VA
-RF001 - Menu Cadastro
-RF002 -  Cadastro de Conta do Usuário ("C" do CRUD)
-RF003 - Login
-RF004 - Senha Não Visível ao Digitar
-RF006 - Menu Principal
-RF007 - Configurações: "R", "U" e "D" do CRUD de Conta do Usuário
-RF008 - Menu Hábitos
-RF009 - Algoritmo de Desempenho do Usuário para Mascote
-RF009- Mascote
-RF010 - CRUD Hábitos
+RF001 - Menu Cadastro  
+RF002 -  Cadastro de Conta do Usuário ("C" do CRUD)  
+RF003 - Login  
+RF004 - Senha Não Visível ao Digitar  
+RF006 - Menu Principal  
+RF007 - Configurações: "R", "U" e "D" do CRUD de Conta do Usuário  
+RF008 - Menu Hábitos  
+RF009 - Algoritmo de Desempenho do Usuário para Mascote  
+RF009- Mascote  
+RF010 - CRUD Hábitos  
   
  ### 2ª VA (Requisitos ainda não definidos completamente)
 
