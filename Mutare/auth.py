@@ -65,3 +65,36 @@ class Auth:
             tentativas += 1
             time.sleep(2)
         return None
+
+    def atualizar_senha(self):
+        email = input(Fore.YELLOW + "Digite seu email: ").strip()
+        senha_antiga = Utils.input_senha("Digite sua senha atual: ").strip()
+        
+        if not self.db.verificar_credenciais(email, senha_antiga):
+            print(Fore.RED + "Email ou senha incorretos.")
+            return
+    
+        nova_senha = Utils.input_senha("Digite a nova senha: ").strip()
+        if not nova_senha:
+            print(Fore.RED + "Nova senha inválida.")
+            return
+    
+        self.db.cursor.execute("UPDATE usuarios SET senha = ? WHERE Email = ?", (nova_senha, email))
+        self.db.conn.commit()
+        print(Fore.GREEN + "Senha atualizada com sucesso.")
+
+    def excluir_conta(self):
+        email = input(Fore.YELLOW + "Digite seu e-mail: ").strip()
+        senha = Utils.input_senha("Digite sua senha: ").strip()
+    
+        if not self.db.verificar_credenciais(email, senha):
+            print(Fore.RED + "Credenciais inválidas.")
+            return
+    
+        confirmacao = input(Fore.RED + "Tem certeza que deseja excluir sua conta? (s/n): ").lower()
+        if confirmacao == 's':
+            self.db.cursor.execute("DELETE FROM usuarios WHERE Email = ?", (email,))
+            self.db.conn.commit()
+            print(Fore.GREEN + "Conta excluída com sucesso.")
+        else:
+            print("Operação cancelada.")
