@@ -2,7 +2,7 @@
 # MUTARE Project 🐌
 
 **Repositório MUTARE - PISI1 - Projetos Interdiciplinares de Sistemas da Informação 1**  
-Desenvolvedores: Laura Cordeiro e Pedro Ailton  
+Desenvolvedores: [Laura Cordeiro](https://github.com/mlcordeiro) e [Pedro Ailton](https://github.com/pedroailton)  
 Docente Responsável: Cleyton Magalhães  
 
 Descrição do projeto:  
