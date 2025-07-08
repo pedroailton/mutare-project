@@ -209,8 +209,6 @@ class Habit:
     '''
 
     def recomendacao(self):
-
-        habito = Habit() # Não sei ainda ao certo como vou chamar os métodos. Tá assim por enquanto
         
         while True:
             Utils.limpar_tela()
@@ -222,11 +220,11 @@ class Habit:
 
             escolha = input(Fore.YELLOW + "Escolha uma opção: ").strip()
             if escolha == '1':
-                habito.habitos_sustentaveis()
+                self.habitos_sustentaveis()
             elif escolha == '2':
-                habito.habitos_saudaveis()
+                self.habitos_saudaveis()
             elif escolha == '3':
-                habito.habitos_criativos()
+                self.habitos_criativos()
             elif escolha == '4':
                 print("Voltando ao menu de hábitos...")
                 time.sleep(1)
@@ -236,9 +234,7 @@ class Habit:
                 time.sleep(1)
 
     def habitos_sustentaveis(self):
-        
-        habito = Habit(db) # Não sei ainda ao certo como vou chamar os métodos. Tá assim por enquanto
-        
+               
         while True:
             Utils.limpar_tela()
 
@@ -248,18 +244,17 @@ class Habit:
             nomes_habitos_sustentaveis = ['Comprar uma planta para cuidar', 'Reduzir tempo de banho', 'Evitar uso de copos descartáveis']
 
             # Menu adaptado para futuras alterações na lista nomes_habitos_sustentaveis
-            for n in nomes_habitos_sustentaveis:
-                print(f'[{n + 1}] Adicionar o hábito {nomes_habitos_sustentaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
+            for n in list(range(len(nomes_habitos_sustentaveis))):
+                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_sustentaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
             print(f'[{len(nomes_habitos_sustentaveis) + 1}] Adicionar Voltar') # indicação do dígito para voltar
 
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
 
             # Verificação do item escolhido
-
             n = 0
             while n in list(range(len(nomes_habitos_sustentaveis))):
-                if escolha == str(n + 1):
-                    habito.inserir_habito_recomendacao(self, nomes_habitos_sustentaveis[n])
+                if escolha == str(int(n) + 1):
+                    self.inserir_habito_recomendacao(self, nomes_habitos_sustentaveis[n])
                     break
                 elif escolha == str(len(nomes_habitos_sustentaveis)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
@@ -274,16 +269,14 @@ class Habit:
 
     def habitos_saudaveis(self):
         
-        habito = Habit(db) # Não sei ainda ao certo como vou chamar os métodos. Tá assim por enquanto
-
         while True:
             Utils.limpar_tela()
             print('Seu corpo é sua base e sua mente é seu motor.\nInvestir em hábitos saudáveis é uma forma de honrar o presente e proteger o seu futuro.\nDormir bem, se alimentar com equilíbrio, se movimentar: tudo isso transforma sua energia, seu humor e sua disposição.\nSeu bem-estar é sua principal ferramenta para viver com mais plenitude.')
 
             nomes_habitos_saudaveis = ['Dormir no mínimo 7 horas na noite anterior', 'Beber ao menos 2 litros de água', 'Caminhar']
 
-            for n in nomes_habitos_saudaveis:
-                print(f'[{n + 1}] Adicionar o hábito {nomes_habitos_saudaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
+            for n in list(range(len(nomes_habitos_saudaveis))):
+                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_saudaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
             print(f'[{len(nomes_habitos_saudaveis) + 1}] Adicionar Voltar') # indicação do dígito para voltar
 
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
@@ -293,7 +286,7 @@ class Habit:
             n = 0
             while n in list(range(len(nomes_habitos_saudaveis))):
                 if escolha == str(n + 1):
-                    habito.inserir_habito_recomendacao(self, nomes_habitos_saudaveis[n])
+                    self.inserir_habito_recomendacao(self, nomes_habitos_saudaveis[n])
                     break
                 elif escolha == str(len(nomes_habitos_saudaveis)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
@@ -307,8 +300,6 @@ class Habit:
 
     def habitos_criativos(self):
 
-        habito = Habit(db) # Não sei ainda ao certo como vou chamar os métodos. Tá assim por enquanto
-
         while True:
             Utils.limpar_tela()
 
@@ -316,8 +307,8 @@ class Habit:
 
             nomes_habitos_criativos = ['Desenhar', 'Tocar violão', 'Ler um livro' 'Sair sozinho', 'Escrever em um diário']
 
-            for n in nomes_habitos_criativos:
-                print(f'[{n + 1}] Adicionar o hábito {nomes_habitos_criativos[n]}\n') # indicação de um dígito para cada recomendação da lista
+            for n in list(range(len(nomes_habitos_criativos))):
+                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_criativos[n]}\n') # indicação de um dígito para cada recomendação da lista
             print(f'[{len(nomes_habitos_criativos) + 1}] Adicionar Voltar') # indicação do dígito para voltar
 
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
@@ -326,7 +317,7 @@ class Habit:
             n = 0
             while n in list(range(len(nomes_habitos_criativos))):
                 if escolha == str(n + 1):
-                    habito.inserir_habito_recomendacao(self, nomes_habitos_criativos[n])
+                    self.inserir_habito_recomendacao(self, nomes_habitos_criativos[n])
                     break
                 elif escolha == str(len(nomes_habitos_criativos)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")

@@ -87,7 +87,7 @@ def menu_inicial(auth):
 
 
 if __name__ == '__main__':
-    db = Database() # Objeto do database
+    db = Database('data/Mutare.db') # Objeto do database
     auth = Auth(db) # Objeto do authorizate com database
     try:
         email = menu_inicial(auth)
