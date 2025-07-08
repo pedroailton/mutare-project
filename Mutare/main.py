@@ -6,6 +6,7 @@ from mascot import Mascot
 from colorama import Fore
 import time
 
+# Ainda é preciso ter certeza dos objetos ligados ao usuário
 
 def menu_principal(email, db):
     habit = Habit(db)
@@ -86,8 +87,8 @@ def menu_inicial(auth):
 
 
 if __name__ == '__main__':
-    db = Database()
-    auth = Auth(db)
+    db = Database() # Objeto do database
+    auth = Auth(db) # Objeto do authorizate com database
     try:
         email = menu_inicial(auth)
         if email:
