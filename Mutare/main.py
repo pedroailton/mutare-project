@@ -40,7 +40,8 @@ def menu_habitos(habit):
         print("[2] Editar hábito")
         print("[3] Deletar hábito")
         print("[4] Progresso")
-        print("[5] Voltar")
+        print("[5] Hábitos Recomendados")
+        print("[6] Voltar")
 
         opcao = input(Fore.YELLOW + "Escolha uma opção: ").strip()
         if opcao == '1':
@@ -52,6 +53,8 @@ def menu_habitos(habit):
         elif opcao == '4':
             habit.progresso()
         elif opcao == '5':
+            habit.recomendacao()
+        elif opcao == '6': 
             break
         else:
             print(Fore.RED + "Opção inválida.")
