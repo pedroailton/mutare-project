@@ -3,7 +3,7 @@
 
 **Repositório MUTARE - PISI1 - Projetos Interdiciplinares de Sistemas da Informação 1**  
 Desenvolvedores: [Laura Cordeiro](https://github.com/mlcordeiro) e [Pedro Ailton](https://github.com/pedroailton)  
-Docente Responsável: [Cleyton Magalhães](https://github.com/profcvanut)
+Docente Responsável: [Cleyton Magalhães](https://github.com/cvanut)
 
 Descrição do projeto:  
 O Mutare é uma ferramenta segura de gerenciamento consciente de hábitos que busca trazer qualidade de vida, saúde e produtividade na atual era de estímulos incessantes advindos das comodidades das novas tecnologias, que desincentiva a prática de bons hábitos.  
