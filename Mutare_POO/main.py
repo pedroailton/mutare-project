@@ -1,8 +1,8 @@
 from database import Database
-from utils import Utils
+from util import Utils
 from auth import Auth
-from habit import Habit
-from mascot import Mascot
+from habito import Habit
+from mascote import Mascot
 from colorama import Fore
 import time
 

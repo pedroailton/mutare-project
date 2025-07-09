@@ -1,7 +1,7 @@
 import time
 import bcrypt
 from colorama import Fore
-from utils import Utils
+from util import Utils
 from database import Database
 
 class Auth:

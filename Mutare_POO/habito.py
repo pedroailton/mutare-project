@@ -3,7 +3,7 @@ import re
 from datetime import datetime, date
 from colorama import Fore
 
-from utils import Utils
+from util import Utils
 
 class Habit:
     def __init__(self, db):
