@@ -12,8 +12,8 @@ Esse é o Mutare.
 
 ## ENTREGAS
 - [x] 1VA 28/05/25
-- [ ] 2VA 16/07/25
-- [ ] 3VA 23/07/25
+- [ ] 2VA 23/07/25
+- [ ] 3VA 30/07/25
 
 ## FLUXOGRAMAS DOS REQUISITOS FUNCIONAIS
 Acesse clicando [aqui](https://drive.google.com/drive/folders/1aOAuCHuZ8fUJ0etgrPnZh6ARmnOMll4f?usp=sharing) (Google Drive)
@@ -30,9 +30,13 @@ RF009 - Algoritmo de Desempenho do Usuário para Mascote
 RF009- Mascote  
 RF010 - CRUD Hábitos  
   
- ### 2ª VA (Requisitos ainda não definidos completamente)
+ ### 2ª VA
 
-
+RF011 - Sistema de Recompensas(XP) e Níveis  
+RF012 - Interface Gráfica com CustomTKinter  
+RF013 - Verificação em Duas Etapas por email  
+RF014 - Recuperar Senha  
+RF015 - Recomendações Inteligentes  
 
 ## PRINCIPAIS FUNÇÕES DO CÓDIGO
 
@@ -83,11 +87,14 @@ RF010 - CRUD Hábitos
 
 ## TECNOLOGIAS UTILIZADAS
 
-- Python 3.x
-- SQLite
+- Python 3.13.5
+- SQLite 3
 - Bibliotecas `bcrypt`,`colorama`,`datetime`, `os`, `time`, `re`, `msvcrt`
 
-## INSTALAÇÃO
+## BIBLIOTECAS
+
+## INSTALAÇÃO NECESSÁRIA
  ```
  pip install colorama bcrypt
  ```
+Utilizar esse comando na execução no terminal.
