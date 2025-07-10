@@ -1,7 +1,7 @@
 from util import Util
 
 class Game():
-    def progresso(self):
+    def calcular_progresso(self):
         Util.limparTela()
         print("\n=== Progresso dos hábitos ===")
 

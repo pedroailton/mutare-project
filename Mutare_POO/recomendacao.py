@@ -40,7 +40,7 @@ class Recomendacao():
             print(Fore.GREEN + f"Hábito recomendado '{self.nome}' adicionado com sucesso!")
             time.sleep(2)
 
-        def recomendacao(self):
+        def definir_recomendacao(self):
             
             while True:
                 Util.limparTela()
@@ -65,7 +65,7 @@ class Recomendacao():
                     print(Fore.RED + "Opção inválida. Tente novamente")
                     time.sleep(1)
 
-        def habitos_sustentaveis(self):
+        def mostrar_habitos_sustentaveis(self):
                 
             while True:
                 Util.limparTela()
@@ -99,7 +99,7 @@ class Recomendacao():
                     n = n + 1
 
 
-        def habitos_saudaveis(self):
+        def mostrar_habitos_saudaveis(self):
             
             while True:
                 Util.limparTela()
@@ -130,7 +130,7 @@ class Recomendacao():
                         break
                     n = n + 1
 
-        def habitos_criativos(self):
+        def mostrar_habitos_criativos(self):
 
             while True:
                 Util.limparTela()
