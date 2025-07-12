@@ -5,6 +5,8 @@ from habito import Habito
 from mascote import Mascote
 from colorama import Fore
 from configurações import Config
+from gamificacao import Gamificacao
+from recomendacao import Recomendacao
 import main
 import time
 
@@ -14,6 +16,8 @@ def menuPrincipal(email, db):
     mascote = Mascote(db)
     auth = Auth(db)
     config = Config(db, main, auth)
+    game = Gamificacao(db)
+    rec = Recomendacao(db)
 
     while True:
         Util.limparTela()
@@ -25,7 +29,7 @@ def menuPrincipal(email, db):
 
         escolha = input(Fore.YELLOW + "Escolha uma opção: ").strip()
         if escolha == '1':
-            menuHabitos(email, habito)
+            menuHabitos(email, habito, game, rec)
         elif escolha == '2':
             mascote.exibir()
         elif escolha == '3':
@@ -39,7 +43,8 @@ def menuPrincipal(email, db):
             time.sleep(1)
 
 
-def menuHabitos(email, habito):
+def menuHabitos(email, habito, game, rec):
+
     while True:
         Util.limparTela()
         print(Fore.BLUE + "\n=== MENU DE HÁBITOS ===")
@@ -58,9 +63,9 @@ def menuHabitos(email, habito):
         elif opcao == '3':
             habito.deletarHabito()
         elif opcao == '4':
-            habito.progresso()
+            game.progresso()
         elif opcao == '5':
-            habito.recomendacao()
+            rec.mostrarRecomendacao()
         elif opcao == '6':
             break
         else:
