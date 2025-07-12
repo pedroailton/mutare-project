@@ -1,7 +1,6 @@
 from datetime import datetime, date
 import time
 from util import Util
-from database import Database
 from colorama import Fore
 
 class Recomendacao:

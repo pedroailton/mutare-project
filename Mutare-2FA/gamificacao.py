@@ -1,7 +1,6 @@
 from datetime import date, datetime
 from util import Util
 from colorama import Fore
-from database import Database
 import time
 
 class Gamificacao:
