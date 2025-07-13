@@ -6,6 +6,7 @@ import time
 class Gamificacao:
     def __init__(self, db):
         self.db = db
+        self.nivel_atual = 0
 
     def calcularProgresso(self):
         Util.limparTela()
@@ -72,19 +73,51 @@ class Gamificacao:
 
         input("\nPressione Enter para continuar...")
     
-    '''
-    def atualizarXp(self):
+    
+    def atualizarXP(self):
         """
         Algoritmo de xp:
-            Preenchimento único de hábito (diário, semanal,mensal): 1 ponto, 2 pontos e 3 pontos, respectivamente
-            Meta de preenchimentos: de 20 em 20 (20, 40, 60, ...): 5 pontos
-            Pontos para subir de nível: 5
+            Preenchimento único de hábito (diário, semanal,mensal): 1 ponto, 2 pontos e 3 pontos, respectivamente;
+            Meta de feitos: de 20 em 20 (20, 40, 60, ...): 5 pontos;
+            Para subir de nível: 5 pontos.
         """
-        Utils.limpar_tela()
+        total_pontos = 0
+        pontos = 0
+        meta = 20
 
-        pontos = quantidade de preenchimentos de hábitos presente no banco de dados (db)
+        habitos = self.db.execute("SELECT id, frequencia FROM habitos").fetchall()
+        
+        try:
+            # Verificação de 'feitos' em cada hábito registrado no banco de dados
+            for id_habito, frequencia in habitos:
+                feitos = self.db.execute(
+                        "SELECT COUNT(*) FROM habito_progresso WHERE id_habito = ?",
+                        (id_habito,)
+                    ).fetchone()[0]
+                
+                # Registro de pontos por tipo de frequência
+                if frequencia == 'Diária':
+                    pontos = feitos * 1
+                elif frequencia == 'Semanal':
+                    pontos = feitos * 2
+                elif frequencia == 'Mensal':
+                    pontos = feitos * 3
 
-        # Subir de nível
-        if pontos >= nivel_atual + 5
-            nivel_atual += 1
-    '''
+                # Contadores
+                total_pontos += pontos 
+                total_feitos += feitos
+
+            # Pontos por meta batida
+            total_pontos += (total_feitos // meta) * 5
+
+            # Subir de nível
+            novo_nivel = total_pontos // 5
+            self.nivel_atual = novo_nivel
+
+        # Caso não haja hábitos registrados, não faça nenhuma operação
+        except:
+            pass
+
+        finally:
+            return self.nivel_atual
+    

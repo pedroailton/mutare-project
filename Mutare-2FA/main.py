@@ -33,7 +33,7 @@ def menuPrincipal(email, db):
         elif escolha == '2':
             mascote.exibir()
         elif escolha == '3':
-            config.menuConfiguracoes(email)
+            config.menuConfiguracoes(email, game)
         elif escolha == '4':
             print("Saindo...")
             time.sleep(1)

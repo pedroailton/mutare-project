@@ -1,4 +1,5 @@
 from util import Util
+from gamificacao import Gamificacao
 from colorama import Fore
 import bcrypt
 import time
@@ -14,7 +15,7 @@ class Config:
         resultado = self.db.execute('SELECT Email, senha FROM usuarios WHERE Email = ?', (email,))
         return resultado.fetchone()
 
-    def menuConfiguracoes(self, email):
+    def menuConfiguracoes(self, email, game):
         '''Exibe o menu de configurações.'''
         while True:
             Util.limparTela()
@@ -27,7 +28,7 @@ class Config:
             escolha = input('Digite sua escolha: ').strip()
 
             if escolha == '1':
-                self.visualizarConta(email)
+                self.visualizarConta(email, game)
             elif escolha == '2':
                 print(Fore.BLUE + 'Saindo da conta...') 
                 time.sleep(2)
@@ -37,16 +38,18 @@ class Config:
             else:
                 print(Fore.RED + 'Dígito inválido. Digite novamente.')
 
-    def visualizarConta(self, email):
+    def visualizarConta(self, email, game):
         '''Exibe dados da conta e as opções de atualização/exclusão.'''
         Util.limparTela()
         conta = self.buscarConta(email)
+        nivel = game.atualizarXP()
+        
         if not conta:
             print(Fore.RED + 'Conta não encontrada.')
             return
         
         print('-'*20)
-        print(f"INFORMAÇÕES DA CONTA\nEmail: {conta[0]}\nSenha: {'*' * 8}")
+        print(f"INFORMAÇÕES DA CONTA\nEmail: {conta[0]}\nSenha: {'*' * 8}\nNível: {nivel}")
         print('-'*20)
 
         while True:
