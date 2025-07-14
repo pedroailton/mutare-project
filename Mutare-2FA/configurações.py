@@ -42,7 +42,7 @@ class Config:
         '''Exibe dados da conta e as opções de atualização/exclusão.'''
         Util.limparTela()
         conta = self.buscarConta(email)
-        nivel = game.atualizarXP()
+        nivel = game.atualizarPontos()
         
         if not conta:
             print(Fore.RED + 'Conta não encontrada.')

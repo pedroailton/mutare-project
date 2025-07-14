@@ -74,7 +74,7 @@ class Gamificacao:
         input("\nPressione Enter para continuar...")
     
     
-    def atualizarXP(self):
+    def atualizarPontos(self):
         """
         Algoritmo de xp:
             Preenchimento único de hábito (diário, semanal,mensal): 1 ponto, 2 pontos e 3 pontos, respectivamente;
