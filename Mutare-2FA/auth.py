@@ -115,10 +115,13 @@ class Auth:
                                 return email
                             else:
                                 print(Fore.RED + '❌ Código incorreto.')
+                                time.sleep(2)
                         print(Fore.RED + '\n❌ Muitas tentativas. Login bloqueado.')
+                        time.sleep(2)
                         return None
                     else:
                         print(Fore.RED + '\n❌ Erro ao enviar o código de verificação.')
+                        time.sleep(2)
                         return None
             print(Fore.RED + 'E-mail ou senha incorretos.')
             tentativas += 1
@@ -126,12 +129,12 @@ class Auth:
         return None
 
     # Autentiacação em Duas Etapas
-    def gerar_codigo(self):
+    def gerarCodigo(self):
         self.codigo = str(random.randint(100000, 999999))
         self.hora_codigo = datetime.now()
         return self.codigo
 
-    def codigo_expirado(self):
+    def codigoExpirado(self):
         if not self.hora_codigo:
             return True
         return datetime.now() > self.hora_codigo + timedelta(minutes=5)
@@ -140,7 +143,7 @@ class Auth:
     def enviarCodigoAutenticacao(self, destinatario, codigo):
         corpo = f'Seja bem vindo(a) à sua jornada Mutare! Seu código de verificação é: {codigo}'
         msg = MIMEText(corpo)
-        msg['Subject'] = 'Código de Verificação em Dois Fatores - Mutare'
+        msg['Subject'] = 'Código de Autenticação em Dois Fatores - Mutare'
         msg['From'] = self.email_remetente
         msg['To'] = destinatario
 
@@ -154,4 +157,5 @@ class Auth:
             return True
         except Exception as erro:
             print(f"❌ Erro ao enviar e-mail: {erro}") 
+            time.sleep(2)
             return False
