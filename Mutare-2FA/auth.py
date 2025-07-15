@@ -88,15 +88,15 @@ class Auth:
                 if isinstance(senha_hash, str):
                     senha_hash = senha_hash.encode('utf-8')
                 if bcrypt.checkpw(senha.encode('utf-8'), senha_hash):
-                    codigo = self.gerar_codigo()
+                    codigo = self.gerarCodigo()
                     if self.enviarCodigoAutenticacao(email, codigo):
                         for i in range(3):
                             digitado = input(Fore.CYAN + 'Digite o código de verificação enviado para seu e-mail: ').strip()
-                            if self.codigo_expirado():
+                            if self.codigoExpirado():
                                 print(Fore.RED + '⏰ Código expirado.')
                                 resposta = input(Fore.YELLOW + 'Deseja reenviar um novo código? (s/n): ').strip().lower()
                                 if resposta == 's':
-                                    self.gerar_codigo()
+                                    self.gerarCodigo()
                                     if self.enviarCodigoAutenticacao(email, self.codigo):
                                         print(Fore.GREEN + '📧 Novo código enviado com sucesso.\n')
                                         time.sleep(1)
@@ -125,6 +125,10 @@ class Auth:
                         return None
             print(Fore.RED + 'E-mail ou senha incorretos.')
             tentativas += 1
+            resposta = input(Fore.YELLOW + 'Esqueceu sua senha? Deseja recuperar agora? (s/n): ').strip().lower()
+            if resposta == 's':
+                self.recuperarSenha()
+                return None  
             time.sleep(2)
         return None
 
@@ -159,3 +163,58 @@ class Auth:
             print(f"❌ Erro ao enviar e-mail: {erro}") 
             time.sleep(2)
             return False
+        
+    def recuperarSenha(self):
+        Util.limparTela()
+        print(Fore.WHITE + '\n=== RECUPERAÇÃO DE SENHA ===')
+        email = input(Fore.YELLOW + 'Digite seu e-mail: ').strip()
+
+        # Verifica se o e-mail está cadastrado
+        resultado = self.db.execute('SELECT 1 FROM usuarios WHERE Email = ?', (email,)).fetchone()
+        if not resultado:
+            print(Fore.RED + 'E-mail não encontrado.')
+            time.sleep(2)
+            return
+
+        # Gera e envia código
+        codigo = self.gerarCodigo()
+        if not self.enviarCodigoAutenticacao(email, codigo):
+            print(Fore.RED + '❌ Falha ao enviar código. Tente novamente.')
+            time.sleep(2)
+            return
+
+        print(Fore.GREEN + '📧 Código enviado. Verifique seu e-mail.')
+
+        # Verificação do código
+        for _ in range(3):
+            digitado = input(Fore.YELLOW + 'Digite o código recebido: ').strip()
+            if self.codigoExpirado():
+                print(Fore.RED + '⏰ Código expirado. Tente novamente.')
+                return
+            if digitado == self.codigo:
+                break
+            else:
+                print(Fore.RED + 'Código incorreto.')
+        else:
+            print(Fore.RED + '❌ Limite de tentativas atingido.')
+            return
+
+        # Redefinir senha
+        nova = Util.inputSenhaAsteriscos('Nova senha: ').strip()
+        confirmar = Util.inputSenhaAsteriscos('Confirme a nova senha: ').strip()
+
+        if nova != confirmar:
+            print(Fore.RED + 'As senhas não coincidem.')
+            return
+
+        validacao = Util.validarSenha(nova)
+        if validacao != "válida":
+            print(Fore.RED + validacao)
+            return
+
+        nova_hash = bcrypt.hashpw(nova.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        self.db.execute('UPDATE usuarios SET senha = ? WHERE Email = ?', (nova_hash, email))
+        self.db.conn.commit()
+
+        print(Fore.GREEN + '✅ Senha atualizada com sucesso!')
+        time.sleep(2)
