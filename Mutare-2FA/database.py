@@ -7,9 +7,9 @@ class Database:
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
         self.cursor.execute('PRAGMA foreign_keys = ON')
-        self._criar_tabelas()
+        self.criarTabelas()
 
-    def _criar_tabelas(self):
+    def criarTabelas(self):
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             Email TEXT UNIQUE NOT NULL,

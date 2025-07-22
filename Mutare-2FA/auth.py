@@ -41,7 +41,7 @@ class Auth:
                 time.sleep(2)
                 continue
 
-            senha = Util.inputSenhaAsteriscos('Digite a senha: ').strip()
+            senha = Util.inputSenhaAsteriscos('Digite a senha (De 4-8 caracteres, pelo menos 1 número e 1 letra maiúscula): ').strip()
             confirmacao = Util.inputSenhaAsteriscos('Confirme a senha: ').strip()
 
             validacao = Util.validarSenha(senha)
@@ -61,6 +61,8 @@ class Auth:
                 self.db.conn.commit()
                 print(Fore.GREEN + 'Usuário cadastrado com sucesso!')
                 time.sleep(2)
+                from main import menuPrincipal  
+                menuPrincipal(email, self.db) 
                 return
             except sqlite3.IntegrityError as e:
                 if 'UNIQUE constraint' in str(e):
@@ -200,7 +202,7 @@ class Auth:
             return
 
         # Redefinir senha
-        nova = Util.inputSenhaAsteriscos('Nova senha: ').strip()
+        nova = Util.inputSenhaAsteriscos('Nova senha(De 4-8 caracteres, pelo menos 1 número e 1 letra maiúscula): ').strip()
         confirmar = Util.inputSenhaAsteriscos('Confirme a nova senha: ').strip()
 
         if nova != confirmar:
