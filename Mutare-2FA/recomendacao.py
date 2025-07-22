@@ -82,8 +82,12 @@ class Recomendacao:
 
             # Menu adaptado para futuras alterações na lista nomes_habitos_sustentaveis
             for n in list(range(len(nomes_habitos_sustentaveis))):
-                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_sustentaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
-            print(f'[{len(nomes_habitos_sustentaveis) + 1}] Voltar') # indicação do dígito para voltar
+
+                # indicação de um dígito para cada recomendação da lista
+                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_sustentaveis[n]}\n')
+
+            # indicação do dígito para voltar
+            print(f'[{len(nomes_habitos_sustentaveis) + 1}] Voltar')
 
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
 

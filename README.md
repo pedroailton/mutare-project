@@ -32,47 +32,47 @@ RF010 - CRUD Hábitos
   
  ### 2ª VA
 
-RF011 - Sistema de Recompensas(XP) e Níveis  
-RF012 - Interface Gráfica com CustomTKinter  
-RF013 - Verificação em Duas Etapas por email  
-RF014 - Recuperar Senha  
-RF015 - Recomendações Inteligentes  
+RF011 - Sistema de Recompensas(XP) e Níveis    
+RF012 - Verificação em Duas Etapas por email  
+RF013 - Recuperar Senha  
+RF014 - Recomendações Inteligentes  
 
 ## PRINCIPAIS FUNÇÕES DO CÓDIGO
 
 ### Autenticação de Usuário
 
-- `menu_log_cad()`: Menu inicial com opções de login e cadastro.
-- `tela_cadastro()`: Cadastro de usuários com validação de e-mail e senha.
-- `tela_login()`: Login seguro com verificação de credenciais e limite de tentativas.
-- `email_valido(email)`: Verifica se o e-mail possui domínio permitido (`@gmail.com`, `@ufrpe.br`).
-- `validar_senha(senha)`: Valida senhas com base em regras de segurança (mín. 1 número, 1 maiúscula).
-- `input_senha_asteriscos()`: Entrada de senha com caracteres ocultos no terminal.
+- `menuInicial(auth)`: Menu inicial com opções de login e cadastro.
+- `cadastrarUsuario(self)`: Cadastro de usuários com validação de e-mail e senha.
+- `loginUsuario(self)`: Login seguro com verificação de credenciais e limite de tentativas.
+- `enviarCodigoAutenticacao(self, destinatario, codigo)`: Envia um código para a autenticação em dois fatores e recuperação de senha.
+- `recuperarSenha(self)`: Realiza o processo de recuperação de senha.
 
 ### Configurações da Conta
 
-- `configuracoes(Email)`: Acessa as configurações da conta do usuário.
-- `visualizar_conta(Email)`: Exibe informações da conta e permite alterações.
-- `atualizar_senha(Email)`: Atualiza a senha com verificação da senha atual.
-- `excluir_conta(Email)`: Exclui a conta após dupla confirmação.
+- `menuconfiguracoes(self, email, game)`: Acessa as configurações da conta do usuário.
+- `visualizarConta(self, email, game)`: Exibe informações da conta e permite alterações.
+- `atualizarSenha(self, email)`: Atualiza a senha com verificação da senha atual.
+- `excluirConta(self, email)`: Exclui a conta após dupla confirmação.
+- `buscarConta(self, email)`: Recupera dados da conta do usuário logado.
 
 ### Gerenciamento de Hábitos
 
-- `menu_habitos()`: Menu com opções de adicionar, editar, deletar ou visualizar hábitos.
-- `inserir_habito()`: Adiciona um novo hábito com nome, frequência, motivação e datas.
-- `listar_habitos(cursor)`: Lista todos os hábitos cadastrados.
-- `editar_habito(cursor, conn)`: Edita um hábito existente.
-- `deletar_habito(cursor, conn)`: Exclui um hábito com base no ID.
+- `menuHabitos(email, habito, game, rec)`: Menu com opções de adicionar, editar, deletar ou visualizar hábitos.
+- `inserirHabito(self, email)`: Adiciona um novo hábito com nome, frequência, motivação e datas.
+- `listarHabitos(self)`: Lista todos os hábitos cadastrados.
+- `editarHabito(self)`: Edita um hábito existente.
+- `deletarHabito(self)`: Exclui um hábito com base no ID.
 
-### Registro de Progresso
+### Gameficação
 
-- `progresso()`: Exibe barra de progresso para cada hábito com base na frequência (Diária, Semanal, Mensal).
+- `calcularProgresso(self)`: Exibe barra de progresso para cada hábito com base na frequência (Diária, Semanal, Mensal).
   - Permite adicionar registros conforme a frequência.
   - Garante que não sejam inseridos registros duplicados para o mesmo período.
-
+- `atualizarPontos(self)`: Atualiza os pontos de XP.
+  
 ### Mascote Motivacional
 
-- `mascote()`: Mostra um mascote com mensagens motivacionais de acordo com o desempenho do usuário:
+- `exibir(self)`: Mostra um mascote com mensagens motivacionais de acordo com o desempenho do usuário:
   - Desempenho excelente (≥ 80%)
   - Bom (60–79%)
   - Fraco (40–59%)
@@ -81,8 +81,10 @@ RF015 - Recomendações Inteligentes
 
 ### Utilidades
 
-- `limpar_tela()`: Limpa a tela do terminal conforme o sistema operacional.
-- `buscar_conta(Email)`: Recupera dados da conta do usuário logado.
+- `limparTela()`: Limpa a tela do terminal conforme o sistema operacional.
+- `emailValido(email)`: Verifica se o e-mail possui domínio permitido (`@gmail.com`, `@ufrpe.br`).
+- `validarSenha(senha)`: Valida senhas com base em regras de segurança (mín. 1 número, 1 maiúscula).
+- `inputSenhaAsteriscos()`: Entrada de senha com caracteres ocultos no terminal.
 
 
 ## TECNOLOGIAS UTILIZADAS
