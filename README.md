@@ -79,6 +79,13 @@ RF014 - Recomendações Inteligentes
   - Ruim (< 40%)
   - Sem registros (início)
 
+### Recomendações Inteligentes
+- `inserirHabitoRecomendacao(self, habito_recomendado)`: Coleta dados do usuário para cadastrar um novo hábito sugerido (nome, frequência, motivação e datas) e insere no banco de dados.
+- `mostrarRecomendacao(self)`: Exibe o menu de categorias de hábitos recomendados (Sustentáveis, Saudáveis e Criativos) e direciona para a seleção dos hábitos dentro de cada categoria.
+- `habitosSustentaveis(self)`: Exibe hábitos sustentáveis recomendados e permite ao usuário escolher um para adicioná-lo ao sistema.
+- `habitosSaudaveis(self)`: Exibe hábitos saudáveis recomendados e permite ao usuário escolher um para adicioná-lo ao sistema.
+- `habitosCriativos(self)`: Exibe hábitos criativos recomendados e permite ao usuário escolher um para adicioná-lo ao sistema.
+
 ### Utilidades
 
 - `limparTela()`: Limpa a tela do terminal conforme o sistema operacional.
@@ -86,12 +93,11 @@ RF014 - Recomendações Inteligentes
 - `validarSenha(senha)`: Valida senhas com base em regras de segurança (mín. 1 número, 1 maiúscula).
 - `inputSenhaAsteriscos()`: Entrada de senha com caracteres ocultos no terminal.
 
-
 ## TECNOLOGIAS UTILIZADAS
 
 - Python 3.13.5
 - SQLite 3
-- Bibliotecas `bcrypt`,`colorama`,`datetime`, `os`, `time`, `re`, `msvcrt`
+- Bibliotecas `bcrypt`,`colorama`,`datetime`, `os`, `time`, `re`, `msvcrt`, `dotemv`, `random` e entre outras.
 
 ## BIBLIOTECAS
 
@@ -99,4 +105,10 @@ RF014 - Recomendações Inteligentes
  ```
  pip install colorama bcrypt
  ```
-Utilizar esse comando na execução no terminal.
+ ```
+ pip install bcrypt
+ ```
+ ```
+ pip install python-dotenv
+ ```
+Utilizar esses comandos na execução no terminal.
