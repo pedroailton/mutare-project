@@ -1,4 +1,5 @@
-![Sem nome (500 x 500 px) (2)](https://github.com/user-attachments/assets/db754006-615e-483d-b495-2ba13c265d26)
+![Sem nome (500 x 500 px) (2)](https://github.com/user-attachments/assets/db754006-615e-483d-b495-2ba13c265d26)  
+
 # MUTARE Project 🐌
 
 **Repositório MUTARE - PISI1 - Projetos Interdiciplinares de Sistemas da Informação 1**  
@@ -12,7 +13,7 @@ Esse é o Mutare.
 
 ## ENTREGAS
 - [x] 1VA 28/05/25
-- [ ] 2VA 23/07/25
+- [x] 2VA 23/07/25
 - [ ] 3VA 30/07/25
 
 ## FLUXOGRAMAS DOS REQUISITOS FUNCIONAIS
@@ -27,7 +28,7 @@ RF006 - Menu Principal
 RF007 - Configurações: "R", "U" e "D" do CRUD de Conta do Usuário  
 RF008 - Menu Hábitos  
 RF009 - Algoritmo de Desempenho do Usuário para Mascote  
-RF009- Mascote  
+RF009 - Mascote  
 RF010 - CRUD Hábitos  
   
  ### 2ª VA
@@ -95,20 +96,32 @@ RF014 - Recomendações Inteligentes
 
 ## TECNOLOGIAS UTILIZADAS
 
-- Python 3.13.5
-- SQLite 3
-- Bibliotecas `bcrypt`,`colorama`,`datetime`, `os`, `time`, `re`, `msvcrt`, `dotemv`, `random` e entre outras.
+| Tecnologias         | Utilidade |
+|---------------------|-----------|
+| Python 3.13.5     | Linguagem principal de desenvolvimento do sistema. |
+| SQLite 3          | Banco de dados leve e embutido para armazenamento local. |
+| Trello            | Organização e gerenciamento de tarefas e fluxos do projeto. |
+| Git, GitHub, GitHub Desktop | Controle de versão, hospedagem do repositório e interface visual para commits e sincronização. |
+| Draw.io             | Design de fluxogramas. |
+
 
 ## BIBLIOTECAS
 
+| Biblioteca | Utilidade |
+|------------|-----------|
+| `bcrypt`   | Criptografia de senhas usando hash seguro. |
+| `colorama` | Estilização de textos no terminal com cores e efeitos. |
+| `datetime` | Manipulação e formatação de datas e horários. |
+| `os`       | Interação com o sistema operacional (pastas, arquivos, terminal). |
+| `time`     | Controle de tempo, delays e marcação temporal. |
+| `re`       | Uso de expressões regulares para validações e buscas em texto. |
+| `msvcrt`   | Leitura de teclas pressionadas no terminal (exclusivo para Windows). |
+| `dotenv`   | Carregamento de variáveis de ambiente a partir de um arquivo `.env`. |
+| `random`   | Geração de números e escolhas aleatórias. |
+| `smtplib`  | Envio de e-mails por meio do protocolo SMTP. |
+
 ## INSTALAÇÃO NECESSÁRIA
  ```
- pip install colorama bcrypt
+pip install colorama bcrypt python-dotenv
  ```
- ```
- pip install bcrypt
- ```
- ```
- pip install python-dotenv
- ```
-Utilizar esses comandos na execução no terminal.
+Utilizar esse comando na execução no terminal, antes de rodar o programa.
