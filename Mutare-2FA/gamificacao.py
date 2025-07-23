@@ -83,7 +83,7 @@ class Gamificacao:
         """
         total_pontos = 0
         pontos = 0
-        meta = 20
+        META = 20
 
         habitos = self.db.execute("SELECT id, frequencia FROM habitos").fetchall()
         
@@ -108,7 +108,7 @@ class Gamificacao:
                 total_feitos += feitos
 
             # Pontos por meta batida
-            total_pontos += (total_feitos // meta) * 5
+            total_pontos += (total_feitos // META) * 5
 
             # Subir de nível
             novo_nivel = total_pontos // 5

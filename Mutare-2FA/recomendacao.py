@@ -84,7 +84,7 @@ class Recomendacao:
         nomes = ['Comprar uma planta para cuidar', 'Reduzir tempo de banho', 'Evitar uso de copos descartáveis']
         while True:
             Util.limparTela()
-            print('Cuidar do planeta começa com pequenas atitudes...\n')
+            print('Cuidar do planeta começa com pequenas atitudes.\n')
 
             for i, nome in enumerate(nomes, 1):
                 print(f'[{i}] Adicionar o hábito {nome}\n')
@@ -106,7 +106,7 @@ class Recomendacao:
         nomes = ['Dormir no mínimo 7 horas na noite anterior', 'Beber ao menos 2 litros de água', 'Caminhar']
         while True:
             Util.limparTela()
-            print('Seu corpo é sua base e sua mente é seu motor...\n')
+            print('Seu corpo é sua base e sua mente é seu motor.\n')
 
             for i, nome in enumerate(nomes, 1):
                 print(f'[{i}] Adicionar o hábito {nome}\n')
@@ -129,7 +129,7 @@ class Recomendacao:
 
         while True:
             Util.limparTela()
-            print('A criatividade é a ponte entre o que você sente e o que você expressa...\n')
+            print('A criatividade é a ponte entre o que você sente e o que você expressa.\n')
 
             for i, nome in enumerate(nomes, 1):
                 print(f'[{i}] Adicionar o hábito {nome}\n')
