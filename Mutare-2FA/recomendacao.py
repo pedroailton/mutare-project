@@ -4,14 +4,14 @@ from util import Util
 from colorama import Fore
 
 class Recomendacao:
-    def __init__(self, db):
+    def __init__(self, db, email):
         self.db = db
+        self.email = email
 
-    def inserirHabitoRecomendacao(self, habito_recomendado): # Definir hábito recomendado com base em lista
-                
+    def inserirHabitoRecomendacao(self, habito_recomendado):       
         Util.limparTela()
 
-        self.nome = habito_recomendado # Única diferença do método inserir_habito()
+        self.nome = habito_recomendado
         print(f'Nome: {self.nome}')
 
         self.frequencia = input('Frequência (Diária, Semanal ou Mensal): ').strip().capitalize()
@@ -27,27 +27,36 @@ class Recomendacao:
             return
 
         try:
-            start_date = input('Data de início (AAAA-MM-DD): ').strip()
-            datetime.strptime(start_date, '%Y-%m-%d')
-            end_date = input('Data de término (AAAA-MM-DD): ').strip()
-            datetime.strptime(end_date, '%Y-%m-%d')
-            if end_date < start_date:
+            start_date = input('Data de início (DD/MM/AAAA): ').strip()
+            end_date = input('Data de término (DD/MM/AAAA): ').strip()
+
+            start_date_dt = datetime.strptime(start_date, '%d/%m/%Y')
+            end_date_dt = datetime.strptime(end_date, '%d/%m/%Y')
+
+            if end_date_dt < start_date_dt:
                 print(Fore.RED + 'Data de término anterior à de início.')
+                time.sleep(2)
                 return
+
         except ValueError:
             print(Fore.RED + 'Data inválida.')
+            time.sleep(2)
             return
 
-        self.db.execute('''
-            INSERT INTO habits (name, created_at, start_date, end_date, frequency, motivation)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (self.nome, date.today(), start_date, end_date, self.frequencia, self.motivacao))
+        try:
+            self.db.execute('''
+                INSERT INTO habitos (nome, criado_em, data_inicial, data_final, frequencia, motivacao, email)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+            ''', (self.nome, date.today(), start_date, end_date, self.frequencia, self.motivacao, self.email))
+  
+            print(Fore.GREEN + f"Hábito recomendado '{self.nome}' adicionado com sucesso!")
+            time.sleep(2)
 
-        print(Fore.GREEN + f"Hábito recomendado '{self.nome}' adicionado com sucesso!")
-        time.sleep(2)
+        except Exception as e:
+            print(Fore.RED + f"Erro ao adicionar hábito: {e}")
+            time.sleep(2)
 
     def mostrarRecomendacao(self):
-                
         while True:
             Util.limparTela()
             print(Fore.CYAN + f"\n=== HÁBITOS RECOMENDADOS ===")
@@ -72,113 +81,68 @@ class Recomendacao:
                 time.sleep(1)
 
     def habitosSustentaveis(self):
-                    
+        nomes = ['Comprar uma planta para cuidar', 'Reduzir tempo de banho', 'Evitar uso de copos descartáveis']
         while True:
             Util.limparTela()
+            print('Cuidar do planeta começa com pequenas atitudes...\n')
 
-            print('Cuidar do planeta começa com pequenas atitudes.\nCada gesto sustentável — mesmo que simples — é uma escolha consciente por um futuro melhor.\nQuando você diz “sim” a um hábito ecológico, você diz “não” ao desperdício, à poluição e ao desrespeito com a natureza.\nA sustentabilidade é construída no cotidiano — e depende de você.')
+            for i, nome in enumerate(nomes, 1):
+                print(f'[{i}] Adicionar o hábito {nome}\n')
+            print(f'[{len(nomes) + 1}] Voltar')
 
-            nomes_habitos_sustentaveis = ['Comprar uma planta para cuidar', 'Reduzir tempo de banho', 'Evitar uso de copos descartáveis']
-
-            # Menu adaptado para futuras alterações na lista nomes_habitos_sustentaveis
-            for n in list(range(len(nomes_habitos_sustentaveis))):
-
-                # indicação de um dígito para cada recomendação da lista
-                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_sustentaveis[n]}\n')
-
-            # indicação do dígito para voltar
-            print(f'[{len(nomes_habitos_sustentaveis) + 1}] Voltar')
-
-            escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
-
-            # Verificação do item escolhido
-            n = 0
-            habito_adicionado = False
-            while n in list(range(len(nomes_habitos_sustentaveis))):
-                if escolha == str(int(n) + 1):
-                    self.inserirHabitoRecomendacao(self, nomes_habitos_sustentaveis[n])
-                    habito_adicionado = True
-                    break
-                elif escolha == str(len(nomes_habitos_sustentaveis)):
-                    print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
-                    time.sleep(1)
-                    break
-                elif escolha == str(len(nomes_habitos_sustentaveis) + 1):
-                    print(Fore.RED + "Opção inválida. Tente novamente")
-                    time.sleep(1)
-                    break
-                n = n + 1
-            if habito_adicionado:
+            escolha = input(Fore.YELLOW + "Escolha uma opção: ").strip()
+            if escolha.isdigit() and 1 <= int(escolha) <= len(nomes):
+                self.inserirHabitoRecomendacao(nomes[int(escolha) - 1])
                 break
-        return None
+            elif escolha == str(len(nomes) + 1):
+                print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
+                time.sleep(1)
+                break
+            else:
+                print(Fore.RED + "Opção inválida. Tente novamente")
+                time.sleep(1)
 
     def habitosSaudaveis(self):
-                
+        nomes = ['Dormir no mínimo 7 horas na noite anterior', 'Beber ao menos 2 litros de água', 'Caminhar']
         while True:
             Util.limparTela()
-            print('Seu corpo é sua base e sua mente é seu motor.\nInvestir em hábitos saudáveis é uma forma de honrar o presente e proteger o seu futuro.\nDormir bem, se alimentar com equilíbrio, se movimentar: tudo isso transforma sua energia, seu humor e sua disposição.\nSeu bem-estar é sua principal ferramenta para viver com mais plenitude.')
+            print('Seu corpo é sua base e sua mente é seu motor...\n')
 
-            nomes_habitos_saudaveis = ['Dormir no mínimo 7 horas na noite anterior', 'Beber ao menos 2 litros de água', 'Caminhar']
+            for i, nome in enumerate(nomes, 1):
+                print(f'[{i}] Adicionar o hábito {nome}\n')
+            print(f'[{len(nomes) + 1}] Voltar')
 
-            for n in list(range(len(nomes_habitos_saudaveis))):
-                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_saudaveis[n]}\n') # indicação de um dígito para cada recomendação da lista
-            print(f'[{len(nomes_habitos_saudaveis) + 1}] Voltar') # indicação do dígito para voltar
-
-            escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
-
-            # Verificação do item escolhido
-            habito_adicionado = False
-            n = 0
-            while n in list(range(len(nomes_habitos_saudaveis))):
-                if escolha == str(n + 1):
-                    self.inserirHabitoRecomendacao(self, nomes_habitos_saudaveis[n])
-                    habito_adicionado = True
-                    break
-                elif escolha == str(len(nomes_habitos_saudaveis)):
-                    print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
-                    time.sleep(1)
-                    break
-                elif escolha == str(len(nomes_habitos_saudaveis) + 1):
-                    print(Fore.RED + "Opção inválida. Tente novamente")
-                    time.sleep(1)
-                    break
-                n = n + 1
-            if habito_adicionado:
+            escolha = input(Fore.YELLOW + "Escolha uma opção: ").strip()
+            if escolha.isdigit() and 1 <= int(escolha) <= len(nomes):
+                self.inserirHabitoRecomendacao(nomes[int(escolha) - 1])
                 break
-        return None
+            elif escolha == str(len(nomes) + 1):
+                print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
+                time.sleep(1)
+                break
+            else:
+                print(Fore.RED + "Opção inválida. Tente novamente")
+                time.sleep(1)
 
     def habitosCriativos(self):
+        nomes = ['Desenhar', 'Tocar violão', 'Ler um livro', 'Sair sozinho', 'Escrever em um diário']  # corrigido: vírgula faltando
 
         while True:
             Util.limparTela()
+            print('A criatividade é a ponte entre o que você sente e o que você expressa...\n')
 
-            print('A criatividade é a ponte entre o que você sente e o que você expressa, sua essência.\nQuando você cultiva hábitos criativos, você alimenta sua autenticidade, sua curiosidade e sua capacidade de enxergar o mundo de forma única.\nCriar é uma forma de autoconhecimento e liberdade.\nUm minuto de imaginação ativa pode iluminar o seu dia inteiro. Você deveria investir nesses hábitos.')
+            for i, nome in enumerate(nomes, 1):
+                print(f'[{i}] Adicionar o hábito {nome}\n')
+            print(f'[{len(nomes) + 1}] Voltar')
 
-            nomes_habitos_criativos = ['Desenhar', 'Tocar violão', 'Ler um livro' 'Sair sozinho', 'Escrever em um diário']
-
-            for n in list(range(len(nomes_habitos_criativos))):
-                print(f'[{int(n) + 1}] Adicionar o hábito {nomes_habitos_criativos[n]}\n') # indicação de um dígito para cada recomendação da lista
-            print(f'[{len(nomes_habitos_criativos) + 1}] Voltar') # indicação do dígito para voltar
-
-            escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
-
-            # Verificação do item escolhido
-            habito_adicionado = False
-            n = 0
-            while n in list(range(len(nomes_habitos_criativos))):
-                if escolha == str(n + 1):
-                    self.inserirHabitoRecomendacao(self, nomes_habitos_criativos[n])
-                    habito_adicionado = True
-                    break
-                elif escolha == str(len(nomes_habitos_criativos)):
-                    print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
-                    time.sleep(1)
-                    break
-                elif escolha == str(len(nomes_habitos_criativos) + 1):
-                    print(Fore.RED + "Opção inválida. Tente novamente")
-                    time.sleep(1)
-                    break
-                n = n + 1
-            if habito_adicionado:
+            escolha = input(Fore.YELLOW + "Escolha uma opção: ").strip()
+            if escolha.isdigit() and 1 <= int(escolha) <= len(nomes):
+                self.inserirHabitoRecomendacao(nomes[int(escolha) - 1])
                 break
-        return None
+            elif escolha == str(len(nomes) + 1):
+                print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
+                time.sleep(1)
+                break
+            else:
+                print(Fore.RED + "Opção inválida. Tente novamente")
+                time.sleep(1)

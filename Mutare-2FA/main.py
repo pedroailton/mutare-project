@@ -17,7 +17,7 @@ def menuPrincipal(email, db):
     auth = Auth(db)
     config = Config(db, main, auth)
     game = Gamificacao(db)
-    rec = Recomendacao(db)
+    rec = Recomendacao(db, email)
 
     while True:
         Util.limparTela()
@@ -63,7 +63,7 @@ def menuHabitos(email, habito, game, rec):
         elif opcao == '3':
             habito.deletarHabito()
         elif opcao == '4':
-            game.progresso()
+            game.calcularProgresso()
         elif opcao == '5':
             rec.mostrarRecomendacao()
         elif opcao == '6':
