@@ -155,6 +155,7 @@ class Auth:
 
         try:
             with smtplib.SMTP('smtp.gmail.com', 587) as servidor:
+                servidor.set_debuglevel(1)
                 servidor.ehlo()
                 servidor.starttls()
                 servidor.login(self.email_remetente, self.email_senha)

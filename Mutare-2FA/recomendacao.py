@@ -93,9 +93,11 @@ class Recomendacao:
 
             # Verificação do item escolhido
             n = 0
+            habito_adicionado = False
             while n in list(range(len(nomes_habitos_sustentaveis))):
                 if escolha == str(int(n) + 1):
                     self.inserirHabitoRecomendacao(self, nomes_habitos_sustentaveis[n])
+                    habito_adicionado = True
                     break
                 elif escolha == str(len(nomes_habitos_sustentaveis)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
@@ -106,7 +108,9 @@ class Recomendacao:
                     time.sleep(1)
                     break
                 n = n + 1
-
+            if habito_adicionado:
+                break
+        return None
 
     def habitosSaudaveis(self):
                 
@@ -123,10 +127,12 @@ class Recomendacao:
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
 
             # Verificação do item escolhido
+            habito_adicionado = False
             n = 0
             while n in list(range(len(nomes_habitos_saudaveis))):
                 if escolha == str(n + 1):
                     self.inserirHabitoRecomendacao(self, nomes_habitos_saudaveis[n])
+                    habito_adicionado = True
                     break
                 elif escolha == str(len(nomes_habitos_saudaveis)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
@@ -137,6 +143,9 @@ class Recomendacao:
                     time.sleep(1)
                     break
                 n = n + 1
+            if habito_adicionado:
+                break
+        return None
 
     def habitosCriativos(self):
 
@@ -154,10 +163,12 @@ class Recomendacao:
             escolha = str(input(Fore.YELLOW + "Escolha uma opção: ")).strip()
 
             # Verificação do item escolhido
+            habito_adicionado = False
             n = 0
             while n in list(range(len(nomes_habitos_criativos))):
                 if escolha == str(n + 1):
                     self.inserirHabitoRecomendacao(self, nomes_habitos_criativos[n])
+                    habito_adicionado = True
                     break
                 elif escolha == str(len(nomes_habitos_criativos)):
                     print(Fore.CYAN + "Voltando ao Menu de Recomendações...")
@@ -167,4 +178,7 @@ class Recomendacao:
                     print(Fore.RED + "Opção inválida. Tente novamente")
                     time.sleep(1)
                     break
-                n = n + 1     
+                n = n + 1
+            if habito_adicionado:
+                break
+        return None
