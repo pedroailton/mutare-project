@@ -19,7 +19,7 @@ class Auth:
         self.hora_codigo = None
 
     def _carregar_env(self):
-        load_dotenv(dotenv_path='2FA.env')
+        load_dotenv(dotenv_path='Mutare/2FA.env')
         self.email_remetente = os.getenv("EMAIL_REMETENTE")
         self.email_senha = os.getenv("EMAIL_SENHA")
 
